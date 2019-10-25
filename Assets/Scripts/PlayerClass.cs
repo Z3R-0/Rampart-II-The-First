@@ -12,14 +12,16 @@ public class PlayerClass {
     public int health;
     public int primaryAmmo;
     public int reserveAmmo;
+    public float moveSpeed;
 
     // Start is called before the first frame update
-    public PlayerClass(ClassName name, Gun g, int hp, int pAmmo, int rAmmo) {
+    public PlayerClass(ClassName name, Gun g, int hp, int pAmmo, int rAmmo, float mSpeed) {
         className = name;
         gun = g;
         health = hp;
         primaryAmmo = pAmmo;
         reserveAmmo = rAmmo;
+        moveSpeed = mSpeed;
     }
 
     /// <summary>
@@ -30,9 +32,9 @@ public class PlayerClass {
     public static PlayerClass GetPreset(ClassName className) {
         switch (className) {
             case ClassName.Shotty:
-                return new PlayerClass(ClassName.Shotty, Gun.Shotgun, 100, 6, 36);
+                return new PlayerClass(ClassName.Shotty, Gun.Shotgun, 100, 6, 36, 6.0f);
             default:
-                return new PlayerClass(ClassName.Shotty, Gun.Shotgun, 100, 6, 36);
+                return new PlayerClass(ClassName.Shotty, Gun.Shotgun, 100, 6, 36, 6.0f);
         }
     }
 }

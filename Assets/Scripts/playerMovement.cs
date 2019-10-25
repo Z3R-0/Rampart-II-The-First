@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
     CharacterController characterController;
 
-    public float movementSpeed = 5.0f;
+    public float movementSpeed;
     public float jumpSpeed = 1.2f;
     public float lookSpeed = 3;
     public float gravity = 15f;
@@ -15,6 +13,7 @@ public class playerMovement : MonoBehaviour {
 
     void Start() {
         characterController = GetComponent<CharacterController>();
+        movementSpeed = GetComponent<PlayerHandler>().playerClass.moveSpeed;
     }
 
     void Update() {
