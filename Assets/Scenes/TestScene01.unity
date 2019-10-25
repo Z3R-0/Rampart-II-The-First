@@ -2087,30 +2087,6 @@ PrefabInstance:
       propertyPath: casingGO
       value: 
       objectReference: {fileID: 1599157224}
-    - target: {fileID: 1910693973, guid: c714f1bb4167d9549811e1d9d6efc6c9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8331417520274825320, guid: c714f1bb4167d9549811e1d9d6efc6c9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1.4001465
-      objectReference: {fileID: 0}
-    - target: {fileID: 8331417520274825320, guid: c714f1bb4167d9549811e1d9d6efc6c9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 56.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 3165995467181679442, guid: c714f1bb4167d9549811e1d9d6efc6c9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1.8000488
-      objectReference: {fileID: 0}
-    - target: {fileID: 3165995467181679442, guid: c714f1bb4167d9549811e1d9d6efc6c9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 56.19995
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c714f1bb4167d9549811e1d9d6efc6c9, type: 3}
 --- !u!1001 &7351527297090760343
