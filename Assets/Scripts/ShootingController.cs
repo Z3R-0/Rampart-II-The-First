@@ -16,7 +16,7 @@ public class ShootingController : MonoBehaviour {
     float nextFire;
     float reloadSpeed = 0.5f;
 
-    bool breakReload = false;
+    bool reloading;
 
     int power = 10;
     int ejectSpeed = 2;
@@ -41,9 +41,9 @@ public class ShootingController : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetButtonDown("Fire1") && Time.time > nextFire) {
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire && !reloading) {
             if (player.currentPrimaryAmmo == 0) {
-                breakReload = false;
+                reloading = true;
                 StartCoroutine(Reload());
             } else {
                 nextFire = Time.time + fireRate;
@@ -51,7 +51,7 @@ public class ShootingController : MonoBehaviour {
             }
         }
         if (Input.GetButtonDown("Reload")) {
-            breakReload = false;
+            reloading = true;
             StartCoroutine(Reload());
         }
     }
@@ -104,7 +104,8 @@ public class ShootingController : MonoBehaviour {
     }
 
     private IEnumerator Reload() {
-        yield return new WaitForSeconds(reloadSpeed);
+        animator.Play("ShottyReload");
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         if (player.currentPrimaryAmmo == 0) {
             if (player.currentReserveAmmo < player.playerClass.primaryAmmo) {
                 player.currentPrimaryAmmo = player.currentReserveAmmo;
@@ -123,5 +124,6 @@ public class ShootingController : MonoBehaviour {
             }
         }
         player.UpdateHud();
+        reloading = false;
     }
 }

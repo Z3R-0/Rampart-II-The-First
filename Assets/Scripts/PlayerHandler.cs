@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHandler : MonoBehaviour {
@@ -35,5 +36,11 @@ public class PlayerHandler : MonoBehaviour {
         healthText.text = currenthealth.ToString();
         primaryAmmoText.text = currentPrimaryAmmo.ToString();
         reserveAmmoText.text = currentReserveAmmo.ToString();
+    }
+
+    public static IEnumerator WaitForAnimation(Animation animation) {
+        do {
+            yield return null;
+        } while (animation.isPlaying);
     }
 }
